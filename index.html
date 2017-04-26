@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>“超”爱欧洲杯</title>
+		<script type="text/javascript">
+        if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+            var version = parseFloat(RegExp.$1);
+            if (version > 2.3) {
+                var phoneScale = parseInt(window.screen.width) / 750;
+                document.write('<meta name="viewport" content="width=750, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+            } else {
+                document.write('<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+    </script>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<script>
+		document.write("<link rel='stylesheet' href='css/main.css?ver="+ Math.random() +" '/>");
+	</script>
+    <style type="text/css">
+        .loading{position: fixed; width: 100%; height: 100%; background-color: #fff;}
+        .loading p{color: #1a85c1; margin: 330px auto 0; font-size: 28px; display: block; height: 36px; width: 260px; text-align: center;}
+        .loading img{position: absolute; top: 200px; left: 320px;}
+        #loading{z-index: 9;}
+    </style>
+</head>
+<body>
+    <div id="loading" class="loading">
+        <img src="images/loading.gif">
+        <p>载入中...&nbsp;&nbsp;<span>0</span>%</p>
+    </div>
+
+    <audio id="audio" src="images/music.mp3" autoplay loop></audio>
+    <div class="music an-music-play"></div>
+
+    <div id="home" class="page home">
+        <img src="images/home_body.png" class="body">
+        <img src="images/home_head.png" class="head handAn">
+        <img src="images/home_begin.png" class="begin btn">
+        <img src="images/home_rule.png?a=1" class="rule btn">
+        <img src="images/home_rank.png" class="rank btn">
+        <!-- <img src="images/home_coupon.png" class="coupon btn" onclick="window.location.href='http://mall.jd.com/qr/v.html?type=js&Id=135276';"> -->
+        <!-- <p class="home_tips">*仅限京东小家电旗舰店使用</p> -->
+    </div>
+
+    <div class="game page" id="game">
+        <canvas id="gameCanvas"></canvas>
+        <img src="images/game_shoot.png" class="shoot" id="shoot">
+    </div>
+
+    <div class="loading" id="gameShade">
+        <P>游戏加载中。。。</P>
+    </div>
+
+    <div id="rule" class="layer8 _rule">
+        <img src="images/rule_rule.png?a=1" class="board">
+        <img src="images/on_off.png" class="off btn">
+    </div>
+
+    <!-- <div id="game" class="page"></div> -->
+
+    <div id="scoring" class="layer8 _scoring">
+        <img src="images/sco_board.png" class="board">
+        <img src="images/sco_sco.png" class="sco">
+        <img src="images/sco_rank.png" class="rank">
+        <img src="images/sco_f2.png" class="f2">
+        <img src="images/sco_f1.png" class="f1">
+        <img src="images/sco_f3.png" class="f3">
+        <img src="images/sco_link.png" class="link">
+        <img src="images/sco_share.png" class="share">
+        <img src="images/sco_tips.png" class="tips">
+        <img src="images/sco_tipsbtn.png" class="tipsbtn btn">
+        <img src="images/sco_back.png" class="back">
+        <img src="images/sco_start.png?a=1" class="start">
+        <span class="score"></span>
+        <span class="tscore"></span>
+    </div>
+
+    <div id="rank" class="layer8 _rank">
+        <img src="images/rank_rank.png" class="board">
+        <img src="images/rank_btn.png" class="yes btn">
+        <img src="images/on_off.png" class="off btn">
+        <label class="all">6127</label>
+        <label class="myRank"></label>
+        <label class="myScore"></label>
+        <ul class="rank-con">
+
+        </ul>
+    </div>
+
+    <div id="twmbtn" class="layer8 _twmbtn">
+        <img src="images/twmbtn.png" class="board">
+        <img src="images/on_off.png" class="off">
+    </div>
+
+    <div id="twm" class="layer8 _twm">
+        <img src="images/twpanel.png" class="board">
+        <img src="images/on_off.png" class="off">
+        <img src="images/sco_sco.png" class="sco">
+        <img src="images/sco_f2.png" class="f2">
+        <img src="images/sco_f1.png" class="f1">
+        <span class="score"></span>
+        <span class="tscore"></span>
+    </div>
+
+    <div id="mess" class="layer8 _message">
+        <img src="images/mes_mes.png" class="mes">
+        <img src="images/mes_yes.png" class="yes">
+        <img src="images/mes_update.png" class="update">
+        <img src="images/mes_b.png" class="mesbtn btn">
+        <img src="images/on_off.png" class="off btn">
+        <img src="images/mes_name.png" class="name btn">
+        <img src="images/mes_phone.png" class="phone btn">
+        <img src="images/mes_addr.png" class="addr btn">
+
+        <input value="" class="inp-name" max="30" type="text"></input>
+        <input value="" class="inp-phone" max="20" type="text"></input>
+        <input value="" class="inp-addr" max="50" type="text"></input>
+    </div>
+
+    <div id="share" class="layer8 _sha">
+        <img src="images/sha_foot.png" class="foot1">
+        <img src="images/sha_foot2.png" class="foot2 legAn">
+        <img src="images/sha_share.png" class="sha">
+    </div>
+    
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src='http://www.hylinkcd-ad.com/active/inc/TM_01/js/layer/layer.min.js'></script>
+    <script src='http://www.hylinkcd-ad.com/active/inc/TM_01/js/encrypt.js'></script>
+    <script src='http://www.hylinkcd-ad.com/active/inc/TM_01/js/jweixin-1.0.0.js'></script>
+    <script src='http://www.hylinkcd-ad.com/active/inc/TM_01/js/jquery.cookie.js'></script>
+    <script src="js/jquery.imgpreload.min.js"></script>
+    <script type="text/javascript">
+        var load_a = 0;
+        var load_img = [];
+        load_img.push( 'images/home_body.png' );
+        load_img.push( 'images/home_head.png' );
+        load_img.push( 'images/home_begin.png' );
+        load_img.push( 'images/home_rule.png' );
+        load_img.push( 'images/home_rank.png' );
+        load_img.push( 'images/home_coupon.png' );
+        load_img.push( 'images/game_shoot2.png' );
+        load_img.push( 'images/rule_rule.png' );
+        load_img.push( 'images/on_off.png' );
+        load_img.push( 'images/sco_board.png' );
+
+        var load_img_progress = 0;
+        var load_img_total = load_img.length;
+
+        // 资源图片加载
+        jQuery.imgpreload(load_img,{
+            each: function(){
+                load_a = load_a + 10;
+                if (load_a > 100) {load_a = 100};
+                $('#loading span').text(load_a);
+            },
+            all: function() {
+                $('#loading span').text('100');
+                $('#loading').hide();
+                load_a = null;
+            }
+        });
+    </script>
+    <script src="js/main.js?a=1"></script>
+    <script src="js/share.js?b=1"></script>
+
+    
+    <div style="display:none;">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254933726'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1254933726' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    </div>
+
+
+</body>
+</html>

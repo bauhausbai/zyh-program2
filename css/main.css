@@ -1,0 +1,193 @@
+@charset "utf-8";
+
+body,p,input,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,div{margin:0;padding:0;list-style:none;vertical-align:middle;line-height:1;}
+body,html{width:750px; height: 100%; position:relative; font-family: sans-serif; margin:0 auto; font-size: 31px; 
+-webkit-touch-callout:none; /* 禁用长触弹出的下载图片菜单 */
+-webkit-user-select:none; /* 禁用长触选择文字等功能 */}
+html{-ms-touch-action: none; /* Direct all pointer events to JavaScript code. */}
+header,section,footer,img,button{display:block;margin:0;padding:0;border:none;}
+img{display: inline-block;}
+a{text-decoration: none;}
+input{outline: none;}
+video{object-fit: contain;}
+/* 通用 */
+
+.page{width: 750px; height: 1218px; position: absolute; top: 0; left: 0;}
+.layer8{width: 100%; height: 1218px; position: absolute; top: 0; left: 0; background-color: rgba(0, 0, 0, .8); overflow: hidden;}
+
+#home{background-image:url("../images/home_bg1.jpg");}
+#home img{position:absolute;}
+#home .head{top:510px; left:88px;}
+#home .body{top:829px; left:78px;}
+#home .begin{top:598px; left:434px;}
+#home .rule{top:713px; left:433px;}
+#home .rank{top:824px; left:433px;}
+#home .coupon{top:931px;left:433px;}
+#home .home_tips{position:absolute; color:red; font-size:0.7em; top:1015px; left:455px; font-family:"SimHei";}
+
+#game{display: none;}
+#game .shoot{position: absolute; top: 1020px; left: 630px; display: none;}
+
+#gameShade{color: #fff; overflow: hidden; display: none; box-sizing: border-box;}
+#gameShade p{margin-top: 300px; text-align: center;}
+
+
+#rule{display:none;}
+#rule img{position:absolute;}
+#rule .board{top:80px;}
+#rule .off{top:130px; left:639px}
+
+#mess{display:none;}
+#mess img{position:absolute;}
+#mess .yes{top:850px;left:314px;z-index:1;}
+#mess .update{top:850px;left:314px;z-index:2;display:none;}
+#mess .mes{top:180px;}
+#mess .mesbtn{top:835px;left:244px;}
+#mess .off{top:268px;left:639px;}
+#mess .name{top:413px;left:122px;}
+#mess .phone{top:544px;left:122px;}
+#mess .addr{top:675px;left:122px;}
+#mess input{background-color: transparent; color: #fff; position: absolute; width: 256px; height: 60px; line-height: 60px; font-size: 1em; padding: 0 0.6em; border: none;}
+#mess .inp-name{top: 456px; left: 269px;}
+#mess .inp-phone{top: 592px; left: 269px;}
+#mess .inp-addr{top: 721px; left: 269px;}
+
+#rank{color: #a56a2b; font-size: 1em; display: none;}
+#rank img{position:absolute;}
+#rank .board{top:0px; left: 0;}
+#rank .yes{top:1073px; left:227px;}
+#rank .off{top:40px;left:645px;}
+#rank .all{position: absolute; top: 167px; left: 278px;}
+#rank .myRank{position: absolute; top: 214px; left: 278px;}
+#rank .myScore{position: absolute; top: 214px; left: 566px;}
+#rank .rank-con{position: absolute; top: 261px; left: 95px; height: 837px; width: 562px; overflow: scroll;}
+#rank .rank-con li{width: 100%; height: 84px; background: url(../images/rank_1.png); overflow: hidden;}
+#rank .rank-con li span{display: inline-block;}
+#rank .rank-con .rank{color: #fff; width: 84px; height: 84px; text-align: center; line-height: 70px;}
+#rank .rank-con .nickname{width: 350px; height: 84px; text-align: left; line-height: 80px;}
+
+#scoring{display:none;}
+#scoring img{position:absolute;}
+#scoring .board{top:215px;}
+#scoring .sco{top:250px;left:44px;}
+#scoring .rank{top:250px;left:373px;}
+#scoring .f2{top:366px;left:70px;}
+#scoring .f1{top:494px;left:183px;}
+#scoring .f3{top:493px; left:49px;}
+#scoring .link{top:630px;left:217px;}
+#scoring .share{top:731px;left:217px;}
+#scoring .back{top:838px;left:103px;}
+#scoring .start{top:831px;left:382px;}
+#scoring .tips{top:882px;left:1px;}
+#scoring .tipsbtn{top:983px;left:559px;}
+#scoring .score{display: inline-block; color: #fff; position: absolute; top: 290px; left: 175px;}
+#scoring .tscore{display: inline-block; color: #ff3a1a; position: absolute; top: 511px; left: 406px; font-size: 2em; font-weight: 600;}
+
+#twmbtn{display:none;}
+#twmbtn img{position:absolute;}
+#twmbtn .board{top:175px;left:0px;}
+#twmbtn .off{top:235px;left:641px;}
+
+#twm{display:none;}
+#twm img{position:absolute;}
+#twm .board{top:199px; left:0px;}
+#twm .off{top:220px;left:641px;}
+#twm .sco{top:261px;left:40px;}
+#twm .f2{top:376px;left:70px;}
+#twm .f1{top:496px;left:185px;}
+#twm .score{display: inline-block; color: #fff; position: absolute; top: 299px; left: 175px;}
+#twm .tscore{display: inline-block; color: #ff3a1a; position: absolute; top: 511px; left: 406px; font-size: 2em; font-weight: 600;}
+
+#share{display:none;}
+#share img{position:absolute;}
+#share .foot1{top:7px;left:652px;}
+#share .foot2{top:28px;left:583px;}
+#share .sha{top:292px;left:37px;}
+
+.an-music-play {
+  -webkit-animation: musicPlay 0.8s step-start infinite;
+  -webkit-animation-fill-mode: both;
+}
+@-webkit-keyframes musicPlay {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: -30px 0;
+  }
+  50% {
+    background-position: -60px 0;
+  }
+  75% {
+    background-position: -90px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes musicPlay {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: -30px 0;
+  }
+  50% {
+    background-position: -60px 0;
+  }
+  75% {
+    background-position: -90px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.music{
+  background: url('../images/start.png') no-repeat 0 0;
+  position: absolute;
+  z-index: 999;
+  top: 17px;
+  right: 18px;
+  width: 30px;
+  height: 25px;
+  -webkit-background-size: auto 25px;
+  background-size: auto 25px;
+}
+.music.no {
+  background: url('../images/stop.png') no-repeat 0 0;
+}
+
+.handAn{
+	-webkit-animation: handAn 0.9s linear infinite alternate both;
+			animation: handAn 0.9s linear infinite alternate both;
+	-webkit-transform-origin: 0% 100%;
+			transform-origin: 0% 100%;
+}
+@-webkit-keyframes handAn{
+	0%{
+		-webkit-transform: rotate(-4deg);
+		transform: rotate(-4deg);
+	}
+	100%{
+		-webkit-transform: rotate(4deg);
+		transform: rotate(4deg);
+	}
+}
+
+.legAn{
+	-webkit-animation: legAn 0.9s linear infinite alternate both;
+			animation: legAn 0.9s linear infinite alternate both;
+	-webkit-transform-origin: 60% 6%;
+			transform-origin: 60% 6%;
+}
+@-webkit-keyframes legAn{
+	0%{
+		-webkit-transform: rotate(-5deg);
+		transform: rotate(-5deg);
+	}
+	100%{
+		-webkit-transform: rotate(20deg);
+		transform: rotate(20deg);
+	}
+}
